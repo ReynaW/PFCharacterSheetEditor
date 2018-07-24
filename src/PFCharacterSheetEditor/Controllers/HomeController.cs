@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PFCharacterSheetEditor.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,7 @@ namespace PFCharacterSheetEditor.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(new CharacterSheet());
         }
 
         public ActionResult About()
@@ -24,6 +25,11 @@ namespace PFCharacterSheetEditor.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult Create()
+        {
             return View();
         }
     }

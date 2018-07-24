@@ -1,9 +1,23 @@
-﻿</br>
+﻿@model PFCharacterSheetEditor.Models.CharacterSheet
 @{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Pathfinder Character Sheet Editor</h1>
-    <p class="lead">Using this tool, you are able to input your character statistics and easily generate a PDF of your character.</p>
+<img src="/Images/pathfinder.jpg" width="728" height="409" class="center" />
+<div>
+    <h1 class="text-center">Pathfinder Character Sheet Editor</h1>
+    <p class="lead text-center">Easily generate PDFs of your pathfinder characters.</p>
 </div>
+
+<h5> Start by going to the Create page, or clicking the button below.</h5>
+<hr />
+
+<a href="/Home/Create" class="btn btn-lg btn-info" role="button">Create a new sheet</a>
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+</style>

@@ -21,7 +21,7 @@ namespace PFCharacterSheetEditor.Models
         public int BaseSpeed { get; set; }
         public int BaseSpeedWithArmor { get; set; }
         public int? BaseFlySpeed { get; set; }
-        public int? FlyManuverability { get; set; }
+        public string FlyManuverability { get; set; }
         public int? BaseSwimSpeed { get; set; }
         public int? BaseClimbSpeed { get; set; }
         public int? BaseBurrowSpeed { get; set; }
@@ -29,6 +29,7 @@ namespace PFCharacterSheetEditor.Models
         public bool ClassSkillAppraise { get; set; }
         public bool ClassSkillBluff { get; set; }
         public bool ClassSkillCraft { get; set; }
+        public bool ClassSkillClimb { get; set; }
         public bool ClassSkillDiplomacy { get; set; }
         public bool ClassSkillDisableDevice { get; set; }
         public bool ClassSkillDisguise { get; set; }
@@ -46,6 +47,7 @@ namespace PFCharacterSheetEditor.Models
         public bool ClassSkillKnowledgeNature { get; set; }
         public bool ClassSkillKnowledgeNobility { get; set; }
         public bool ClassSkillKnowledgePlanes { get; set; }
+        public bool ClassSkillKnowledgeReligion { get; set; }
         public bool ClassSkillLingusitics { get; set; }
         public bool ClassSkillPerception { get; set; }
         public bool ClassSkillPerform { get; set; }
