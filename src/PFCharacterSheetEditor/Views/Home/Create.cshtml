@@ -14,23 +14,23 @@
 <div class="row form-horizontal">
     <div id="questionTabs" class="col-md-12">
         <div class="tab-content">
-            <!--TODO: Add Character Classes and DR field, fix spacing, add visual marker for required fields.-->
+            <!--TODO: Add Character Classes and DR field, fix spacing.-->
             <div id="t1" class="active tab-pane">
                 <div class="form-group row">
-                    <label for="CharacterName" class="col-sm-2 col-form-label">Character Name</label>
+                    <label for="CharacterName" class="col-sm-2 col-form-label">Character Name<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="CharacterName" placeholder="Enter your character's name" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="CharacterLevel" class="col-sm-2 col-form-label">Character Level</label>
+                    <label for="CharacterLevel" class="col-sm-2 col-form-label">Character Level<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="CharacterLevel" placeholder="Enter your character's level" />
                     </div>
                 </div>
                 <p> Character Class(es): Work in progress</p>
                 <div class="form-group row">
-                    <label for="Alignment" class="col-sm-2 col-form-label">Alignment</label>
+                    <label for="Alignment" class="col-sm-2 col-form-label">Alignment<font color="danger">*</font></label>
                     <select class="form-control" id="Alignment">
                         <option>LG</option>
                         <option>NG</option>
@@ -62,13 +62,13 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="Race" class="col-sm-2 col-form-label">Race</label>
+                    <label for="Race" class="col-sm-2 col-form-label">Race<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="Race" placeholder="Enter your character's race" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="Size" class="col-sm-2 col-form-label">Size</label>
+                    <label for="Size" class="col-sm-2 col-form-label">Size<font color="danger">*</font></label>
                     <select class="form-control" id="Size">
                         <option>Fine</option>
                         <option>Diminutive</option>
@@ -82,7 +82,7 @@
                     </select>
                 </div>
                 <div class="form-group row">
-                    <label for="Gender" class="col-sm-2 col-form-label">Gender</label>
+                    <label for="Gender" class="col-sm-2 col-form-label">Gender<font color="danger">*</font></label>
                     <select class="form-control" id="Gender">
                         <option>Male</option>
                         <option>Female</option>
@@ -91,31 +91,31 @@
                     </select>
                 </div>
                 <div class="form-group row">
-                    <label for="Age" class="col-sm-2 col-form-label">Age</label>
+                    <label for="Age" class="col-sm-2 col-form-label">Age<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="99999" class="form-control" id="Age" placeholder="Enter your character's age" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="Height" class="col-sm-2 col-form-label">Height</label>
+                    <label for="Height" class="col-sm-2 col-form-label">Height<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="99999" class="form-control" id="Height" placeholder="Enter your character's height" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="Weight" class="col-sm-2 col-form-label">Weight</label>
+                    <label for="Weight" class="col-sm-2 col-form-label">Weight<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="99999" class="form-control" id="Weight" placeholder="Enter your character's weight" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="Hair" class="col-sm-2 col-form-label">Hair</label>
+                    <label for="Hair" class="col-sm-2 col-form-label">Hair<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="Hair" placeholder="Enter your character's hair color" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="Eyes" class="col-sm-2 col-form-label">Eyes</label>
+                    <label for="Eyes" class="col-sm-2 col-form-label">Eyes<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="Eyes" placeholder="Enter your character's eye color" />
                     </div>
@@ -124,61 +124,61 @@
 
             <div id="t2" class="tab-pane">
                 <div class="form-group row">
-                    <label for="StrengthScore" class="col-sm-2 col-form-label">Strength Score</label>
+                    <label for="StrengthScore" class="col-sm-2 col-form-label">Strength Score<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="100" class="form-control" id="StrengthScore" placeholder="Enter your character's STR score" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="DexterityScore" class="col-sm-2 col-form-label">Dexterity Score</label>
+                    <label for="DexterityScore" class="col-sm-2 col-form-label">Dexterity Score<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="100" class="form-control" id="DexterityScore" placeholder="Enter your character's DEX score" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="ConstitutionScore" class="col-sm-2 col-form-label">Constitution Score</label>
+                    <label for="ConstitutionScore" class="col-sm-2 col-form-label">Constitution Score<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="100" class="form-control" id="ConstitutionScore" placeholder="Enter your character's CON score" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="IntelligenceScore" class="col-sm-2 col-form-label">Intelligence Score</label>
+                    <label for="IntelligenceScore" class="col-sm-2 col-form-label">Intelligence Score<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="100" class="form-control" id="IntelligenceScore" placeholder="Enter your character's INT score" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="WisdomScore" class="col-sm-2 col-form-label">Wisdom Score</label>
+                    <label for="WisdomScore" class="col-sm-2 col-form-label">Wisdom Score<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="100" class="form-control" id="WisdomScore" placeholder="Enter your character's WIS score" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="CharismaScore" class="col-sm-2 col-form-label">Charisma Score</label>
+                    <label for="CharismaScore" class="col-sm-2 col-form-label">Charisma Score<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="100" class="form-control" id="CharismaScore" placeholder="Enter your character's CHA score" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="BaseAttackBonus" class="col-sm-2 col-form-label">Base Attack Bonus</label>
+                    <label for="BaseAttackBonus" class="col-sm-2 col-form-label">Base Attack Bonus<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="20" class="form-control" id="BaseAttackBonus" placeholder="Enter your character's BAB" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="BaseFortitudeSave" class="col-sm-2 col-form-label">Base Fortitude Save</label>
+                    <label for="BaseFortitudeSave" class="col-sm-2 col-form-label">Base Fortitude Save<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="20" class="form-control" id="BaseFortitudeSave" placeholder="Enter your character's base fort save" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="BaseReflexSave" class="col-sm-2 col-form-label">Base Reflex Save</label>
+                    <label for="BaseReflexSave" class="col-sm-2 col-form-label">Base Reflex Save<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="20" class="form-control" id="BaseReflexSave" placeholder="Enter your character's base reflex save" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="BaseWillSave" class="col-sm-2 col-form-label">Base Will Save</label>
+                    <label for="BaseWillSave" class="col-sm-2 col-form-label">Base Will Save<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="20" class="form-control" id="BaseWillSave" placeholder="Enter your character's base will save" />
                     </div>
@@ -230,13 +230,13 @@
 
             <div id="t3" class="tab-pane">
                 <div class="form-group row">
-                    <label for="BaseSpeed" class="col-sm-2 col-form-label">Base Speed</label>
+                    <label for="BaseSpeed" class="col-sm-2 col-form-label">Base Speed<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="99999" class="form-control" id="BaseSpeed" placeholder="Enter your character's base speed" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="BaseSpeedWithArmor" class="col-sm-2 col-form-label">Base Speed With Armor</label>
+                    <label for="BaseSpeedWithArmor" class="col-sm-2 col-form-label">Base Speed With Armor<font color="danger">*</font></label>
                     <div class="col-sm-10">
                         <input type="number" min="0" max="99999" class="form-control" id="BaseSpeedWithArmor" placeholder="Enter your character's base speed w/ armor" />
                     </div>
@@ -277,6 +277,8 @@
         </div>
     </div>
 </div>
+
+<p><font color="danger">*</font> Required</p>
 
 <div class="row">
     <div class="col-md-12">
