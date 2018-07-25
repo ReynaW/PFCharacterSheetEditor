@@ -1,33 +1,160 @@
-﻿
+﻿@using System.Web.Configuration
+@model PFCharacterSheetEditor.Models.CharacterSheet
+
 @{
     ViewBag.Title = "Create";
 }
 
+<script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-3.3.1.js"></script>
+
 <h2>Create</h2>
+<hr/>
 
+<div class="row form-horizontal">
+    <div id="questionTabs" class="col-md-12">
+        <div class="tab-content">
+            <div id="t1" class="active tab-pane">
+                <div class="form-group row">
+                    <label for="CharacterName" class="col-sm-2 col-form-label">Character Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="CharacterName" placeholder="Enter your character's name" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="CharacterLevel" class="col-sm-2 col-form-label">Character Level</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="CharacterLevel" placeholder="Enter your character's level" />
+                    </div>
+                </div>
+                <p> Character Class(es): Work in progress</p>
+                <div class="form-group row">
+                    <label for="Alignment" class="col-sm-2 col-form-label">Alignment</label>
+                    <select class="form-control" id="Alignment">
+                        <option>LG</option>
+                        <option>NG</option>
+                        <option>CG</option>
+                        <option>LN</option>
+                        <option>N</option>
+                        <option>CN</option>
+                        <option>LE</option>
+                        <option>NE</option>
+                        <option>CE</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label for="PlayerName" class="col-form-label">Player Name OR Character Number<a href="http://paizo.com/pathfinderSociety/rpg" target="_blank" data-toggle="tooltip" data-placement="top" title="Character Number is only applicable if playing in Pathfinder Society">(?)</a></label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="PlayerName" placeholder="Enter your name, or PFS number." />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Deity" class="col-sm-2 col-form-label">Deity</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="Deity" placeholder="Enter your character's deity" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Homeland" class="col-sm-2 col-form-label">Homeland</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="Homeland" placeholder="Enter your character's homeland" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Race" class="col-sm-2 col-form-label">Race</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="Race" placeholder="Enter your character's race" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Size" class="col-sm-2 col-form-label">Size</label>
+                    <select class="form-control" id="Size">
+                        <option>Fine</option>
+                        <option>Diminutive</option>
+                        <option>Tiny</option>
+                        <option>Small</option>
+                        <option>Medium</option>
+                        <option>Large</option>
+                        <option>Huge</option>
+                        <option>Gargantuan</option>
+                        <option>Colossal</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label for="Gender" class="col-sm-2 col-form-label">Gender</label>
+                    <select class="form-control" id="Gender">
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                        <option>-</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label for="Age" class="col-sm-2 col-form-label">Age</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="99999" class="form-control" id="Age" placeholder="Enter your character's age" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Height" class="col-sm-2 col-form-label">Height</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="99999" class="form-control" id="Height" placeholder="Enter your character's height" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Weight" class="col-sm-2 col-form-label">Weight</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="99999" class="form-control" id="Weight" placeholder="Enter your character's weight" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Hair" class="col-sm-2 col-form-label">Hair</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="Hair" placeholder="Enter your character's hair color" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Eyes" class="col-sm-2 col-form-label">Eyes</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="Eyes" placeholder="Enter your character's eye color" />
+                    </div>
+                </div>
+            </div>
 
+            <div id="t2" class="tab-pane">
+                t2
+            </div>
+            <div id="t3" class="tab-pane">
+                t3
+            </div>
+            <div id="t4" class="tab-pane">
+                t4
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-md-12">
+        <ul class="nav nav-tabs" role="tablist" id="questions">
+            <li role="presentation" class="active"><a class="page-link" href="#t1">Character Description</a></li>
+            <li role="presentation"><a class="page-link" href="#t2">Ability Scores</a></li>
+            <li role="presentation"><a class="page-link" href="#t3">Base Speeds</a></li>
+            <li role="presentation"><a class="page-link" href="#t4">Class Skills</a></li>
+        </ul>
+    </div>
+</div>
 
+<script>
+    $('#example').tooltip(options)
 
+    $('#questions a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
 
+</script>
 
-<nav aria-label="Page navigation">
-    <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-            </a>
-        </li>
-        <li class="page-item active"><a class="page-link" href="#t1">Character Description</a></li>
-        <li class="page-item"><a class="page-link" href="#t2">Ability Scores</a></li>
-        <li class="page-item"><a class="page-link" href="#t3">Base Speeds</a></li>
-        <li class="page-item"><a class="page-link" href="#t4">Class Skills</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-            </a>
-        </li>
-    </ul>
-</nav>

@@ -1,24 +1,40 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace PFCharacterSheetEditor.Models
 {
     public class CharacterSheet
     {
+        [Required]
         public string CharacterName { get; set; }
+        [Required]
         public int CharacterLevel { get; set; }
+        [Required]
         public string CharacterClass { get; set; }
+        [Required]
         public string Alignment { get; set; }
         public string PlayerName { get; set; }
         public string Deity { get; set; }
         public string Homeland { get; set; }
+        [Required]
         public string Race { get; set; }
+        [Required]
         public string Size { get; set; }
+        [Required]
         public char Gender { get; set; }
+        [Required]
         public int Age { get; set; }
+        [Required]
         public int Height { get; set; }
+        [Required]
         public int Weight { get; set; }
+        [Required]
         public string Hair { get; set; }
+        [Required]
         public string Eyes { get; set; }
+        [Required]
         public int BaseSpeed { get; set; }
+        [Required]
         public int BaseSpeedWithArmor { get; set; }
         public int? BaseFlySpeed { get; set; }
         public string FlyManuverability { get; set; }
@@ -60,11 +76,17 @@ namespace PFCharacterSheetEditor.Models
         public bool ClassSkillSurvival { get; set; }
         public bool ClassSkillSwim { get; set; }
         public bool ClassSkillUseMagicDevice { get; set; }
+        [Required]
         public int StrengthScore { get; set; }
+        [Required]
         public int DexterityScore { get; set; }
+        [Required]
         public int ConstitutionScore { get; set; }
+        [Required]
         public int IntelligenceScore { get; set; }
+        [Required]
         public int WisdomScore { get; set; }
+        [Required]
         public int CharismaScore { get; set; }
     }
 }
