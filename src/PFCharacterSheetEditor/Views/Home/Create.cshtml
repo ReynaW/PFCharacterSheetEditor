@@ -14,6 +14,7 @@
 <div class="row form-horizontal">
     <div id="questionTabs" class="col-md-12">
         <div class="tab-content">
+            <!--TODO: Add Character Classes and DR field, fix spacing, add visual marker for required fields.-->
             <div id="t1" class="active tab-pane">
                 <div class="form-group row">
                     <label for="CharacterName" class="col-sm-2 col-form-label">Character Name</label>
@@ -226,9 +227,50 @@
                 </div>
                 <p> Damage Resistance: Work in Progress</p>
             </div>
+
             <div id="t3" class="tab-pane">
-                t3
+                <div class="form-group row">
+                    <label for="BaseSpeed" class="col-sm-2 col-form-label">Base Speed</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="99999" class="form-control" id="BaseSpeed" placeholder="Enter your character's base speed" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="BaseSpeedWithArmor" class="col-sm-2 col-form-label">Base Speed With Armor</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="99999" class="form-control" id="BaseSpeedWithArmor" placeholder="Enter your character's base speed w/ armor" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="BaseFlySpeed" class="col-sm-2 col-form-label">Base Fly Speed</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="99999" class="form-control" id="BaseFlySpeed" placeholder="Enter your character's base fly speed" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="FlyManuverability" class="col-sm-2 col-form-label">Fly Manuverability</label>
+                    <select class="form-control" id="FlyManuverability">
+                        <option>Clumsy</option>
+                        <option>Poor</option>
+                        <option>Average</option>
+                        <option>Good</option>
+                        <option>Perfect</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label for="BaseSwimSpeed" class="col-sm-2 col-form-label">Base Swim Speed</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="99999" class="form-control" id="BaseSwimSpeed" placeholder="Enter your character's base swim speed" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="BaseBurrowSpeed" class="col-sm-2 col-form-label">Base Burrow Speed</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="99999" class="form-control" id="BaseBurrowSpeed" placeholder="Enter your character's base burrow speed" />
+                    </div>
+                </div>
             </div>
+
             <div id="t4" class="tab-pane">
                 t4
             </div>
@@ -242,7 +284,7 @@
             <li role="presentation" class="active"><a class="page-link" href="#t1">Character Description</a></li>
             <li role="presentation"><a class="page-link" href="#t2">Ability Scores & Stats</a></li>
             <li role="presentation"><a class="page-link" href="#t3">Base Speeds</a></li>
-            <li role="presentation"><a class="page-link" href="#t4">Class Skills</a></li>
+            <li role="presentation"><a class="page-link" href="#t4">Skills</a></li>
         </ul>
     </div>
 </div>
