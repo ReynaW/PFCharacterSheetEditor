@@ -36,11 +36,11 @@ namespace PFCharacterSheetEditor.Models
         public int BaseSpeed { get; set; }
         [Required]
         public int BaseSpeedWithArmor { get; set; }
-        public int? BaseFlySpeed { get; set; }
+        public int BaseFlySpeed { get; set; }
         public string FlyManuverability { get; set; }
-        public int? BaseSwimSpeed { get; set; }
-        public int? BaseClimbSpeed { get; set; }
-        public int? BaseBurrowSpeed { get; set; }
+        public int BaseSwimSpeed { get; set; }
+        public int BaseClimbSpeed { get; set; }
+        public int BaseBurrowSpeed { get; set; }
         public bool ClassSkillAcrobatics { get; set; }
         public bool ClassSkillAppraise { get; set; }
         public bool ClassSkillBluff { get; set; }
@@ -88,5 +88,21 @@ namespace PFCharacterSheetEditor.Models
         public int WisdomScore { get; set; }
         [Required]
         public int CharismaScore { get; set; }
+        [Required]
+        public int BaseAttackBonus { get; set; }
+        [Required]
+        public int BaseFortitudeSave { get; set; }
+        [Required]
+        public int BaseReflexSave { get; set; }
+        [Required]
+        public int BaseWillSave { get; set; }
+        public int SpelResistance { get; set; }
+        public int ArmorBonus { get; set; }
+        public int ShieldBonus { get; set; }
+        public int NaturalArmor { get; set; }
+        public int DeflectionBonus { get; set; }
+        public int MiscACBonus { get; set; }
+        public int MiscInitBonus { get; set; }
+        public int DamageResistance { get; set; }
     }
 }

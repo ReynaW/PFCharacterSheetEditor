@@ -9,7 +9,7 @@
 <script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-3.3.1.js"></script>
 
 <h2>Create</h2>
-<hr/>
+<hr />
 
 <div class="row form-horizontal">
     <div id="questionTabs" class="col-md-12">
@@ -122,7 +122,109 @@
             </div>
 
             <div id="t2" class="tab-pane">
-                t2
+                <div class="form-group row">
+                    <label for="StrengthScore" class="col-sm-2 col-form-label">Strength Score</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="100" class="form-control" id="StrengthScore" placeholder="Enter your character's STR score" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="DexterityScore" class="col-sm-2 col-form-label">Dexterity Score</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="100" class="form-control" id="DexterityScore" placeholder="Enter your character's DEX score" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="ConstitutionScore" class="col-sm-2 col-form-label">Constitution Score</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="100" class="form-control" id="ConstitutionScore" placeholder="Enter your character's CON score" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="IntelligenceScore" class="col-sm-2 col-form-label">Intelligence Score</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="100" class="form-control" id="IntelligenceScore" placeholder="Enter your character's INT score" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="WisdomScore" class="col-sm-2 col-form-label">Wisdom Score</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="100" class="form-control" id="WisdomScore" placeholder="Enter your character's WIS score" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="CharismaScore" class="col-sm-2 col-form-label">Charisma Score</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="100" class="form-control" id="CharismaScore" placeholder="Enter your character's CHA score" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="BaseAttackBonus" class="col-sm-2 col-form-label">Base Attack Bonus</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="20" class="form-control" id="BaseAttackBonus" placeholder="Enter your character's BAB" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="BaseFortitudeSave" class="col-sm-2 col-form-label">Base Fortitude Save</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="20" class="form-control" id="BaseFortitudeSave" placeholder="Enter your character's base fort save" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="BaseReflexSave" class="col-sm-2 col-form-label">Base Reflex Save</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="20" class="form-control" id="BaseReflexSave" placeholder="Enter your character's base reflex save" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="BaseWillSave" class="col-sm-2 col-form-label">Base Will Save</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="20" class="form-control" id="BaseWillSave" placeholder="Enter your character's base will save" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="SpellResistance" class="col-sm-2 col-form-label">Spell Resistance</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="20" class="form-control" id="BaseReflexSave" placeholder="Enter your character's spell resistence" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="ArmorBonus" class="col-sm-2 col-form-label">Armor Bonus</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="20" class="form-control" id="ArmorBonus" placeholder="Enter your character's armor bonus to AC" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="ShieldBonus" class="col-sm-2 col-form-label">Shield Bonus</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="20" class="form-control" id="ShieldBonus" placeholder="Enter your character's shield bonus to AC" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="NaturalArmor" class="col-sm-2 col-form-label">Natural Armor Bonus</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="20" class="form-control" id="NaturalArmor" placeholder="Enter your character's natural armor bonus to AC" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="DeflectionBonus" class="col-sm-2 col-form-label">Deflection Bonus</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="20" class="form-control" id="DeflectionBonus" placeholder="Enter your character's deflection bonus to AC" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="MiscACBonus" class="col-sm-2 col-form-label">Misc. AC Bonus</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="20" class="form-control" id="MiscACBonus" placeholder="Enter your character's misc. bonus to AC" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="MiscInitBonus" class="col-sm-2 col-form-label">Misc. Initiative Bonus</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" max="20" class="form-control" id="MiscInitBonus" placeholder="Enter your character's misc. bonus to init" />
+                    </div>
+                </div>
+                <p> Damage Resistance: Work in Progress</p>
             </div>
             <div id="t3" class="tab-pane">
                 t3
@@ -138,7 +240,7 @@
     <div class="col-md-12">
         <ul class="nav nav-tabs" role="tablist" id="questions">
             <li role="presentation" class="active"><a class="page-link" href="#t1">Character Description</a></li>
-            <li role="presentation"><a class="page-link" href="#t2">Ability Scores</a></li>
+            <li role="presentation"><a class="page-link" href="#t2">Ability Scores & Stats</a></li>
             <li role="presentation"><a class="page-link" href="#t3">Base Speeds</a></li>
             <li role="presentation"><a class="page-link" href="#t4">Class Skills</a></li>
         </ul>
@@ -146,12 +248,13 @@
 </div>
 
 <script>
-    $('#example').tooltip(options)
-
     $('#questions a').click(function (e) {
         e.preventDefault();
         $(this).tab('show');
     });
+
+    $('#example').tooltip(options)
+
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     })
