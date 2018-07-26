@@ -9,653 +9,680 @@
 <script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-3.3.1.js"></script>
 
 <h2>Create</h2>
+
 <hr />
 
-<div class="row form-horizontal">
-    <div id="questionTabs" class="col-md-12">
-
-
-        <div class="row form-horizontal">
-            <div id="questionTabs" class="col-md-12">
-                <div class="tab-content">
-                    <!--TODO: Add Character Classes and DR field, fix spacing.-->
-                    <div id="t1" class="active tab-pane">
-                        <div class="form-group row">
-                            <label for="CharacterName" class="col-sm-2 col-form-label">Character Name<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="text" class="form-control" id="CharacterName" placeholder="Character name" />
-                            </div>
-                            <label for="CharacterLevel" class="col-sm-2 col-form-label">Character Level<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="text" class="form-control" id="CharacterLevel" placeholder="Character level" />
-                            </div>
+<form class="needs-validation">
+    <div class="row form-horizontal">
+        <div id="questionTabs" class="col-md-12">
+            <div class="tab-content">
+                <!--TODO: Add Character Classes and DR field.-->
+                <div id="t1" class="active tab-pane">
+                    <div class="form-group row">
+                        <label for="CharacterName" class="col-sm-2 col-form-label">Character Name<font color="danger">*</font></label>
+                        <div class="col-auto">
+                            <input type="text" class="form-control" id="CharacterName" placeholder="Character name" required/>
                         </div>
-                        <p> Character Class(es): Work in progress</p>
-                        <div class="form-group row">
-                            <label for="Alignment" class="col-sm-2 col-form-label">Alignment<font color="danger">*</font></label>
-                            <select class="form-control" id="Alignment">
-                                <option>LG</option>
-                                <option>NG</option>
-                                <option>CG</option>
-                                <option>LN</option>
-                                <option>N</option>
-                                <option>CN</option>
-                                <option>LE</option>
-                                <option>NE</option>
-                                <option>CE</option>
-                            </select>
-                        </div>
-                        <div class="form-group row">
-                            <label for="PlayerName" class="col-form-label">Player Name OR Character Number<a href="http://paizo.com/pathfinderSociety/rpg" target="_blank" data-toggle="tooltip" data-placement="top" title="Character Number is only applicable if playing in Pathfinder Society">(?)</a></label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="PlayerName" placeholder="Your name, or PFS number." />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="Deity" class="col-sm-2 col-form-label">Deity</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="Deity" placeholder="Deity" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="Homeland" class="col-sm-2 col-form-label">Homeland</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="Homeland" placeholder="Homeland" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="Race" class="col-sm-2 col-form-label">Race<font color="danger">*</font></label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="Race" placeholder="Race" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="Size" class="col-sm-2 col-form-label">Size<font color="danger">*</font></label>
-                            <select class="form-control" id="Size">
-                                <option>Fine</option>
-                                <option>Diminutive</option>
-                                <option>Tiny</option>
-                                <option>Small</option>
-                                <option>Medium</option>
-                                <option>Large</option>
-                                <option>Huge</option>
-                                <option>Gargantuan</option>
-                                <option>Colossal</option>
-                            </select>
-                            <label for="Gender" class="col-sm-2 col-form-label">Gender<font color="danger">*</font></label>
-                            <select class="form-control" id="Gender">
-                                <option>Male</option>
-                                <option>Female</option>
-                                <option>Other</option>
-                                <option>-</option>
-                            </select>
-                        </div>
-                        <div class="form-group row">
-                            <label for="Age" class="col-sm-2 col-form-label">Age<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="99999" class="form-control" id="Age" placeholder="Age" />
-                            </div>
-                            <label for="Height" class="col-sm-2 col-form-label">Height<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="99999" class="form-control" id="Height" placeholder="Height" />
-                            </div>
-                            <label for="Weight" class="col-sm-2 col-form-label">Weight<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="99999" class="form-control" id="Weight" placeholder="Weight" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="Hair" class="col-sm-2 col-form-label">Hair<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="text" class="form-control" id="Hair" placeholder="Hair color" />
-                            </div>
-                            <label for="Eyes" class="col-sm-2 col-form-label">Eyes<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="text" class="form-control" id="Eyes" placeholder="Eye color" />
-                            </div>
+                        <label for="CharacterLevel" class="col-sm-2 col-form-label">Character Level<font color="danger">*</font></label>
+                        <div class="col-auto">
+                            <input type="text" class="form-control" id="CharacterLevel" placeholder="Character level" required/>
                         </div>
                     </div>
-
-                    <div id="t2" class="tab-pane">
-                        <div class="form-group row">
-                            <label for="StrengthScore" class="col-sm-2 col-form-label">Strength Score<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="100" class="form-control" id="StrengthScore" placeholder="STR" />
-                            </div>
-                            <label for="DexterityScore" class="col-sm-2 col-form-label">Dexterity Score<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="100" class="form-control" id="DexterityScore" placeholder="DEX" />
-                            </div>
-                            <label for="ConstitutionScore" class="col-sm-2 col-form-label">Constitution Score<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="100" class="form-control" id="ConstitutionScore" placeholder="CON" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="IntelligenceScore" class="col-sm-2 col-form-label">Intelligence Score<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="100" class="form-control" id="IntelligenceScore" placeholder="INT" />
-                            </div>
-                            <label for="WisdomScore" class="col-sm-2 col-form-label">Wisdom Score<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="100" class="form-control" id="WisdomScore" placeholder="WIS" />
-                            </div>
-                            <label for="CharismaScore" class="col-sm-2 col-form-label">Charisma Score<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="100" class="form-control" id="CharismaScore" placeholder="CHA" />
-                            </div>
-                        </div>
-                        <p><small>If you do not have a certain ability score, enter 0 in that field.</small></p>
-                        <div class="form-group row">
-                            <label for="BaseAttackBonus" class="col-sm-2 col-form-label">Base Attack Bonus<font color="danger">*</font></label>
-                            <div class="col-sm-10">
-                                <input type="number" min="0" max="20" class="form-control" id="BaseAttackBonus" placeholder="BAB" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="BaseFortitudeSave" class="col-sm-2 col-form-label">Base Fortitude Save<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="20" class="form-control" id="BaseFortitudeSave" placeholder="Fort" />
-                            </div>
-                            <label for="BaseReflexSave" class="col-sm-2 col-form-label">Base Reflex Save<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="20" class="form-control" id="BaseReflexSave" placeholder="Reflex" />
-                            </div>
-                            <label for="BaseWillSave" class="col-sm-2 col-form-label">Base Will Save<font color="danger">*</font></label>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="20" class="form-control" id="BaseWillSave" placeholder="Will" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="MiscInitBonus" class="col-sm-2 col-form-label">Misc. Initiative Bonus</label>
-                            <div class="col-sm-10">
-                                <input type="number" min="0" max="20" class="form-control" id="MiscInitBonus" placeholder="Misc. bonus to init" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="ArmorBonus" class="col-sm-2 col-form-label">Armor Bonus</label>
-                            <div class="col-sm-10">
-                                <input type="number" min="0" max="20" class="form-control" id="ArmorBonus" placeholder="Armor bonus" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="ShieldBonus" class="col-sm-2 col-form-label">Shield Bonus</label>
-                            <div class="col-sm-10">
-                                <input type="number" min="0" max="20" class="form-control" id="ShieldBonus" placeholder="Shield bonus" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="NaturalArmor" class="col-sm-2 col-form-label">Natural Armor Bonus</label>
-                            <div class="col-sm-10">
-                                <input type="number" min="0" max="20" class="form-control" id="NaturalArmor" placeholder="Natural armor bonus" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="DeflectionBonus" class="col-sm-2 col-form-label">Deflection Bonus</label>
-                            <div class="col-sm-10">
-                                <input type="number" min="0" max="20" class="form-control" id="DeflectionBonus" placeholder="Deflection bonus" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="MiscACBonus" class="col-sm-2 col-form-label">Misc. AC Bonus</label>
-                            <div class="col-sm-10">
-                                <input type="number" min="0" max="20" class="form-control" id="MiscACBonus" placeholder="Misc. bonus to AC" />
-                            </div>
-                        </div>
-                        <p> Damage Resistance: Work in Progress</p>
-                        <div class="form-group row">
-                            <label for="SpellResistance" class="col-sm-2 col-form-label">Spell Resistance</label>
-                            <div class="col-sm-10">
-                                <input type="number" min="0" max="20" class="form-control" id="BaseReflexSave" placeholder="SR" />
-                            </div>
+                    <p> Character Class(es): Work in progress</p>
+                    <div class="form-group row">
+                        <label for="Alignment" class="col-sm-2 col-form-label">Alignment<font color="danger">*</font></label>
+                        <select class="form-control" id="Alignment" required>
+                            <option disabled selected hidden>Choose...</option>
+                            <option>LG</option>
+                            <option>NG</option>
+                            <option>CG</option>
+                            <option>LN</option>
+                            <option>N</option>
+                            <option>CN</option>
+                            <option>LE</option>
+                            <option>NE</option>
+                            <option>CE</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label for="PlayerName" class="col-form-label">Player Name OR Character Number<a href="http://paizo.com/pathfinderSociety/rpg" target="_blank" data-toggle="tooltip" data-placement="top" title="Character Number is only applicable if playing in Pathfinder Society">(?)</a></label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="PlayerName" placeholder="Your name, or PFS number." />
                         </div>
                     </div>
-
-                    <div id="t3" class="tab-pane">
-                        <div class="form-group row">
-                            <label for="BaseSpeed" class="col-sm-2 col-form-label">Base Speed<font color="danger">*</font></label>
-                            <div class="col-4">
-                                <input type="number" min="0" max="99999" class="form-control" id="BaseSpeed" placeholder="Base speed" />
-                            </div>
-                            <label for="BaseSpeedWithArmor" class="col-sm-2 col-form-label">Base Speed With Armor<font color="danger">*</font></label>
-                            <div class="col-4">
-                                <input type="number" min="0" max="99999" class="form-control" id="BaseSpeedWithArmor" placeholder="Base speed w/ armor" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="BaseFlySpeed" class="col-sm-2 col-form-label">Base Fly Speed</label>
-                            <div class="col-4">
-                                <input type="number" min="0" max="99999" class="form-control" id="BaseFlySpeed" placeholder="Base fly speed" />
-                            </div>
-                            <label for="FlyManuverability" class="col-sm-2 col-form-label">Fly Manuverability</label>
-                            <select class="form-control" id="FlyManuverability">
-                                <option>Clumsy</option>
-                                <option>Poor</option>
-                                <option>Average</option>
-                                <option>Good</option>
-                                <option>Perfect</option>
-                            </select>
-                        </div>
-                        <div class="form-group row">
-                            <label for="BaseSwimSpeed" class="col-sm-2 col-form-label">Base Swim Speed</label>
-                            <div class="col-4">
-                                <input type="number" min="0" max="99999" class="form-control" id="BaseSwimSpeed" placeholder="Base swim speed" />
-                            </div>
-                            <label for="BaseBurrowSpeed" class="col-sm-2 col-form-label">Base Burrow Speed</label>
-                            <div class="col-4">
-                                <input type="number" min="0" max="99999" class="form-control" id="BaseBurrowSpeed" placeholder="Base burrow speed" />
-                            </div>
+                    <div class="form-group row">
+                        <label for="Deity" class="col-sm-2 col-form-label">Deity</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="Deity" placeholder="Deity" />
                         </div>
                     </div>
-
-                    <div id="t4" class="tab-pane">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Skill Name</th>
-                                    <th scope="col">Class Skill</th>
-                                    <th scope="col">Skill Ranks</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Acrobatics</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillAcrobatics" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksAcrobatics" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Appraise</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillAppraise" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksAppraise" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Bluff</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillBluff" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksBluff" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-group row">
-                                            <label for="CraftType1" class="col-sm-2 col-form-label">Craft</label>
-                                            <input type="text" class="form-control inTableWidthType" id="ClassType1" placeholder="" />
-                                        </div>
-                                    </td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillCraft" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksCraft" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-group row">
-                                            <label for="CraftType2" class="col-sm-2 col-form-label">Craft</label>
-                                            <input type="text" class="form-control inTableWidthType" id="ClassType2" placeholder="" />
-                                        </div>
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksCraft" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-group row">
-                                            <label for="CraftType3" class="col-sm-2 col-form-label">Craft</label>
-                                            <input type="text" class="form-control inTableWidthType" id="ClassType3" placeholder="" />
-                                        </div>
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksCraft" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Diplomacy</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillDiplomacy" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksDiplomacy" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Disable Device</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillDisableDevice" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksDisableDevice" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Disguise</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillDisguise" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksDisguise" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Escape Artist</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillEscapeArtist" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksEscapeArtist" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Fly</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillFly" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksFly" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>HandleAnimal</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillHandleAnimal" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksHandleAnimal" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Heal</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillHeal" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksHeal" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Intimidate</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillIntimidate" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksIntimidate" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Knowledge (Arcana)</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillKnowledgeArcana" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksKnowledgeArcana" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Knowledge (Dungeoneering)</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillKnowledgeDungeoneering" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksKnowledgeDungeoneering" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Knowledge (Engineering)</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillKnowledgeEngineering" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksKnowledgeEngineering" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Knowledge (Geography)</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillKnowledgeGeography" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksKnowledgeGeography" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Knowledge (History)</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillKnowledgeHistory" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksKnowledgeHistory" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Knowledge (Local)</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillKnowledgeLocal" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksKnowledgeLocal" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Knowledge (Planes)</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillKnowledgePlanes" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksKnowledgePlanes" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Linguistics</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillLinguistics" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksLinguistics" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Perception</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillPerception" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksPerception" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-group row">
-                                            <label for="PerformType1" class="col-sm-2 col-form-label">Perform</label>
-                                            <input type="text" class="form-control inTableWidthType" id="ClassType1" placeholder="" />
-                                        </div>
-                                    </td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillPerform" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksPerform" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-group row">
-                                            <label for="PerformType2" class="col-sm-2 col-form-label">Perform</label>
-                                            <input type="text" class="form-control inTableWidthType" id="ClassType2" placeholder="" />
-                                        </div>
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksPerform" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-group row">
-                                            <label for="ProfessionType1" class="col-sm-2 col-form-label">Profession</label>
-                                            <input type="text" class="form-control inTableWidthType" id="ClassType1" placeholder="" />
-                                        </div>
-                                    </td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillProfession" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksProfession" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-group row">
-                                            <label for="ProfessionType2" class="col-sm-2 col-form-label">Profession</label>
-                                            <input type="text" class="form-control inTableWidthType" id="ClassType2" placeholder="" />
-                                        </div>
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksProfession" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Ride</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillRide" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksRide" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sense Motive</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillSenseMotive" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksSenseMotive" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sleight of Hand</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillSleightOfHand" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksSleightOfHand" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Spellcraft</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillSpellcraft" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksSpellcraft" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Stealth</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillStealth" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksStealth" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Survival</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillSurvival" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksSurvival" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Swim</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillSwim" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksSwim" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Use Magic Device</td>
-                                    <td class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="ClassSkillUseMagicDevice" value="" />
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksUseMagicDevice" />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="form-group row">
+                        <label for="Homeland" class="col-sm-2 col-form-label">Homeland</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="Homeland" placeholder="Homeland" />
+                        </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="Race" class="col-sm-2 col-form-label">Race<font color="danger">*</font></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="Race" placeholder="Race" required/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Size" class="col-sm-2 col-form-label">Size<font color="danger">*</font></label>
+                        <select class="form-control" id="Size" required>
+                            <option disabled selected hidden>Choose...</option>
+                            <option>Fine</option>
+                            <option>Diminutive</option>
+                            <option>Tiny</option>
+                            <option>Small</option>
+                            <option>Medium</option>
+                            <option>Large</option>
+                            <option>Huge</option>
+                            <option>Gargantuan</option>
+                            <option>Colossal</option>
+                        </select>
+                        <label for="Gender" class="col-sm-2 col-form-label">Gender<font color="danger">*</font></label>
+                        <select class="form-control" id="Gender" required>
+                            <option disabled selected hidden>Choose...</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                            <option>-</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Age" class="col-sm-2 col-form-label">Age</label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="99999" class="form-control" id="Age" placeholder="Age" />
+                        </div>
+                        <label for="Height" class="col-sm-2 col-form-label">Height</label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="99999" class="form-control" id="Height" placeholder="Height" />
+                        </div>
+                        <label for="Weight" class="col-sm-2 col-form-label">Weight</label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="99999" class="form-control" id="Weight" placeholder="Weight" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Hair" class="col-sm-2 col-form-label">Hair</label>
+                        <div class="col-auto">
+                            <input type="text" class="form-control" id="Hair" placeholder="Hair color" />
+                        </div>
+                        <label for="Eyes" class="col-sm-2 col-form-label">Eyes</label>
+                        <div class="col-auto">
+                            <input type="text" class="form-control" id="Eyes" placeholder="Eye color" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="t2" class="tab-pane">
+                    <div class="form-group row">
+                        <label for="StrengthScore" class="col-sm-2 col-form-label">Strength Score<font color="danger">*</font></label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="100" class="form-control" id="StrengthScore" placeholder="STR" required/>
+                        </div>
+                        <label for="DexterityScore" class="col-sm-2 col-form-label">Dexterity Score<font color="danger">*</font></label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="100" class="form-control" id="DexterityScore" placeholder="DEX" required/>
+                        </div>
+                        <label for="ConstitutionScore" class="col-sm-2 col-form-label">Constitution Score<font color="danger">*</font></label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="100" class="form-control" id="ConstitutionScore" placeholder="CON" required/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="IntelligenceScore" class="col-sm-2 col-form-label">Intelligence Score<font color="danger">*</font></label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="100" class="form-control" id="IntelligenceScore" placeholder="INT" required/>
+                        </div>
+                        <label for="WisdomScore" class="col-sm-2 col-form-label">Wisdom Score<font color="danger">*</font></label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="100" class="form-control" id="WisdomScore" placeholder="WIS" required/>
+                        </div>
+                        <label for="CharismaScore" class="col-sm-2 col-form-label">Charisma Score<font color="danger">*</font></label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="100" class="form-control" id="CharismaScore" placeholder="CHA" required/>
+                        </div>
+                    </div>
+                    <p><small>If you do not have a certain ability score, enter 0 in that field.</small></p>
+                    <div class="form-group row">
+                        <label for="BaseAttackBonus" class="col-sm-2 col-form-label">Base Attack Bonus<font color="danger">*</font></label>
+                        <div class="col-sm-10">
+                            <input type="number" min="0" max="20" class="form-control" id="BaseAttackBonus" placeholder="BAB" required/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="BaseFortitudeSave" class="col-sm-2 col-form-label">Base Fortitude Save<font color="danger">*</font></label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="20" class="form-control" id="BaseFortitudeSave" placeholder="Fort" required/>
+                        </div>
+                        <label for="BaseReflexSave" class="col-sm-2 col-form-label">Base Reflex Save<font color="danger">*</font></label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="20" class="form-control" id="BaseReflexSave" placeholder="Reflex" required/>
+                        </div>
+                        <label for="BaseWillSave" class="col-sm-2 col-form-label">Base Will Save<font color="danger">*</font></label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="20" class="form-control" id="BaseWillSave" placeholder="Will" required/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="MiscInitBonus" class="col-sm-2 col-form-label">Misc. Initiative Bonus</label>
+                        <div class="col-sm-10">
+                            <input type="number" min="0" max="20" class="form-control" id="MiscInitBonus" placeholder="Misc. bonus to init" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="ArmorBonus" class="col-sm-2 col-form-label">Armor Bonus</label>
+                        <div class="col-sm-10">
+                            <input type="number" min="0" max="20" class="form-control" id="ArmorBonus" placeholder="Armor bonus" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="ShieldBonus" class="col-sm-2 col-form-label">Shield Bonus</label>
+                        <div class="col-sm-10">
+                            <input type="number" min="0" max="20" class="form-control" id="ShieldBonus" placeholder="Shield bonus" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="NaturalArmor" class="col-sm-2 col-form-label">Natural Armor Bonus</label>
+                        <div class="col-sm-10">
+                            <input type="number" min="0" max="20" class="form-control" id="NaturalArmor" placeholder="Natural armor bonus" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="DeflectionBonus" class="col-sm-2 col-form-label">Deflection Bonus</label>
+                        <div class="col-sm-10">
+                            <input type="number" min="0" max="20" class="form-control" id="DeflectionBonus" placeholder="Deflection bonus" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="MiscACBonus" class="col-sm-2 col-form-label">Misc. AC Bonus</label>
+                        <div class="col-sm-10">
+                            <input type="number" min="0" max="20" class="form-control" id="MiscACBonus" placeholder="Misc. bonus to AC" />
+                        </div>
+                    </div>
+                    <p> Damage Resistance: Work in Progress</p>
+                    <div class="form-group row">
+                        <label for="SpellResistance" class="col-sm-2 col-form-label">Spell Resistance</label>
+                        <div class="col-sm-10">
+                            <input type="number" min="0" max="20" class="form-control" id="BaseReflexSave" placeholder="SR" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="t3" class="tab-pane">
+                    <div class="form-group row">
+                        <label for="BaseSpeed" class="col-sm-2 col-form-label">Base Speed<font color="danger">*</font></label>
+                        <div class="col-4">
+                            <input type="number" min="0" max="99999" class="form-control" id="BaseSpeed" placeholder="Base speed" required/>
+                        </div>
+                        <label for="BaseSpeedWithArmor" class="col-sm-2 col-form-label">Base Speed With Armor<font color="danger">*</font></label>
+                        <div class="col-4">
+                            <input type="number" min="0" max="99999" class="form-control" id="BaseSpeedWithArmor" placeholder="Base speed w/ armor" required/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="BaseFlySpeed" class="col-sm-2 col-form-label">Base Fly Speed</label>
+                        <div class="col-4">
+                            <input type="number" min="0" max="99999" class="form-control" id="BaseFlySpeed" placeholder="Base fly speed" />
+                        </div>
+                        <label for="FlyManuverability" class="col-sm-2 col-form-label">Fly Manuverability</label>
+                        <select class="form-control" id="FlyManuverability">
+                            <option disabled selected hidden>Choose...</option>
+                            <option>Clumsy</option>
+                            <option>Poor</option>
+                            <option>Average</option>
+                            <option>Good</option>
+                            <option>Perfect</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label for="BaseSwimSpeed" class="col-sm-2 col-form-label">Base Swim Speed</label>
+                        <div class="col-4">
+                            <input type="number" min="0" max="99999" class="form-control" id="BaseSwimSpeed" placeholder="Base swim speed" />
+                        </div>
+                        <label for="BaseBurrowSpeed" class="col-sm-2 col-form-label">Base Burrow Speed</label>
+                        <div class="col-4">
+                            <input type="number" min="0" max="99999" class="form-control" id="BaseBurrowSpeed" placeholder="Base burrow speed" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="t4" class="tab-pane">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Skill Name</th>
+                                <th scope="col">Class Skill</th>
+                                <th scope="col">Skill Ranks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Acrobatics</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillAcrobatics" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksAcrobatics" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Appraise</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillAppraise" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksAppraise" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bluff</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillBluff" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksBluff" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group row">
+                                        <label for="CraftType1" class="col-sm-2 col-form-label">Craft</label>
+                                        <input type="text" class="form-control inTableWidthType" id="ClassType1" placeholder="" />
+                                    </div>
+                                </td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillCraft" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksCraft" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group row">
+                                        <label for="CraftType2" class="col-sm-2 col-form-label">Craft</label>
+                                        <input type="text" class="form-control inTableWidthType" id="ClassType2" placeholder="" />
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksCraft" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group row">
+                                        <label for="CraftType3" class="col-sm-2 col-form-label">Craft</label>
+                                        <input type="text" class="form-control inTableWidthType" id="ClassType3" placeholder="" />
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksCraft" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Diplomacy</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillDiplomacy" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksDiplomacy" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Disable Device</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillDisableDevice" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksDisableDevice" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Disguise</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillDisguise" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksDisguise" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Escape Artist</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillEscapeArtist" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksEscapeArtist" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fly</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillFly" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksFly" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>HandleAnimal</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillHandleAnimal" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksHandleAnimal" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Heal</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillHeal" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksHeal" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Intimidate</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillIntimidate" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksIntimidate" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Knowledge (Arcana)</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillKnowledgeArcana" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksKnowledgeArcana" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Knowledge (Dungeoneering)</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillKnowledgeDungeoneering" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksKnowledgeDungeoneering" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Knowledge (Engineering)</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillKnowledgeEngineering" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksKnowledgeEngineering" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Knowledge (Geography)</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillKnowledgeGeography" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksKnowledgeGeography" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Knowledge (History)</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillKnowledgeHistory" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksKnowledgeHistory" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Knowledge (Local)</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillKnowledgeLocal" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksKnowledgeLocal" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Knowledge (Planes)</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillKnowledgePlanes" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksKnowledgePlanes" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Linguistics</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillLinguistics" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksLinguistics" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Perception</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillPerception" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksPerception" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group row">
+                                        <label for="PerformType1" class="col-sm-2 col-form-label">Perform</label>
+                                        <input type="text" class="form-control inTableWidthType" id="ClassType1" placeholder="" />
+                                    </div>
+                                </td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillPerform" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksPerform" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group row">
+                                        <label for="PerformType2" class="col-sm-2 col-form-label">Perform</label>
+                                        <input type="text" class="form-control inTableWidthType" id="ClassType2" placeholder="" />
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksPerform" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group row">
+                                        <label for="ProfessionType1" class="col-sm-2 col-form-label">Profession</label>
+                                        <input type="text" class="form-control inTableWidthType" id="ClassType1" placeholder="" />
+                                    </div>
+                                </td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillProfession" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksProfession" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group row">
+                                        <label for="ProfessionType2" class="col-sm-2 col-form-label">Profession</label>
+                                        <input type="text" class="form-control inTableWidthType" id="ClassType2" placeholder="" />
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksProfession" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ride</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillRide" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksRide" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sense Motive</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillSenseMotive" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksSenseMotive" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sleight of Hand</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillSleightOfHand" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksSleightOfHand" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Spellcraft</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillSpellcraft" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksSpellcraft" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Stealth</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillStealth" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksStealth" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Survival</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillSurvival" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksSurvival" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Swim</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillSwim" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksSwim" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Use Magic Device</td>
+                                <td class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ClassSkillUseMagicDevice" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" max="100" class="form-control inTableWidth" id="RanksUseMagicDevice" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 
-    <p><font color="danger">*</font> Required</p>
-    <hr />
-    <div class="row">
-        <div class="col-md-12">
-            <ul class="nav nav-tabs" role="tablist" id="questions">
-                <li role="presentation" class="active"><a class="page-link" href="#t1">Character Description</a></li>
-                <li role="presentation"><a class="page-link" href="#t2">Ability Scores & Stats</a></li>
-                <li role="presentation"><a class="page-link" href="#t3">Base Speeds</a></li>
-                <li role="presentation"><a class="page-link" href="#t4">Skills</a></li>
-            </ul>
-        </div>
+    <button type="submit" class="btn btnStyle">Submit</button>
+
+</form>
+<p><font color="danger">*</font> Required</p>
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        <ul class="nav nav-tabs" role="tablist" id="questions">
+            <li role="presentation"><a class="page-link" href="#t1">Character Description</a></li>
+            <li role="presentation"><a class="page-link" href="#t2">Ability Scores & Stats</a></li>
+            <li role="presentation"><a class="page-link" href="#t3">Base Speeds</a></li>
+            <li role="presentation"><a class="page-link" href="#t4">Skills</a></li>
+        </ul>
     </div>
+</div>
 
-    <script>
-        $('#questions a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        });
+<script>
+    $('#questions a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
 
-        $('#example').tooltip(options)
+    $('#example').tooltip(options)
 
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+</script>
 
-    </script>
-    <style>
-        #Alignment {
-            width: 70px;
-        }
+<style>
+    #Alignment {
+        width: 120px;
+    }
 
-        #Size {
-            width: 150px;
-        }
+    #Size {
+        width: 150px;
+    }
 
-        #Gender {
-            width: 150px;
-        }
+    #Gender {
+        width: 150px;
+    }
 
-        #FlyManuverability {
-            width: 120px;
-        }
+    #FlyManuverability {
+        width: 120px;
+    }
 
-        .inTableWidth {
-            width: 63px;
-        }
+    .inTableWidth {
+        width: 63px;
+    }
 
-        .inTableWidthType {
-            width: 200px;
-        }
-    </style>
+    .inTableWidthType {
+        width: 200px;
+    }
+
+    .btnStyle {
+        background-color: #61ccba;
+        color: white;
+    }
+</style>

@@ -22,15 +22,10 @@ namespace PFCharacterSheetEditor.Models
         public string Size { get; set; }
         [Required]
         public char Gender { get; set; }
-        [Required]
         public int Age { get; set; }
-        [Required]
         public int Height { get; set; }
-        [Required]
         public int Weight { get; set; }
-        [Required]
         public string Hair { get; set; }
-        [Required]
         public string Eyes { get; set; }
         [Required]
         public int BaseSpeed { get; set; }
