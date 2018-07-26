@@ -99,5 +99,11 @@ namespace PFCharacterSheetEditor.Models
         public int MiscACBonus { get; set; }
         public int MiscInitBonus { get; set; }
         public int DamageResistance { get; set; }
+        public string DomainSpecialty { get; set; }
+        public int PlayerCP { get; set; }
+        public int PlayerSP { get; set; }
+        public int PlayerGP { get; set; }
+        public int PlayerPP { get; set; }
+
     }
 }
