@@ -8,7 +8,7 @@
 <script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-3.3.1.js"></script>
 
-<h2>Create</h2>
+<h2>Create a Character</h2>
 
 <hr />
 
@@ -16,7 +16,8 @@
     <div class="row form-horizontal">
         <div id="questionTabs" class="col-md-12">
             <div class="tab-content">
-                <!--TODO: Add Character Classes and DR field.-->
+                <!--TODO: Add Character Classes and DR field, add spells, gear, feats, special abilities, armor, weapons.-->
+
                 <div id="t1" class="active tab-pane">
                     <div class="form-group row">
                         <label for="CharacterName" class="col-sm-2 col-form-label">Character Name<font color="danger">*</font></label>
@@ -207,7 +208,7 @@
                     <div class="form-group row">
                         <label for="SpellResistance" class="col-sm-2 col-form-label">Spell Resistance</label>
                         <div class="col-sm-10">
-                            <input type="number" min="0" max="20" class="form-control" id="BaseReflexSave" placeholder="SR" />
+                            <input type="number" min="0" max="20" class="form-control" id="SpellResistance" placeholder="SR" />
                         </div>
                     </div>
                 </div>
@@ -604,10 +605,22 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div class="form-group row">
+                        <label for="ConditonalModifiers" class="col-form-label">Conditional Modifiers</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="ConditonalModifiers" placeholder="Modifiers" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Languages" class="col-form-label">Languages</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="Languages" placeholder="Languages" />
+                        </div>
+                    </div>
                 </div>
 
                 <div id="t5" class="tab-pane">
-                    <table>
+                    <table id="gearTable" class="table">
                         <thead>
                             <tr>
                                 <th scope="col">Item</th>
@@ -615,6 +628,66 @@
                             </tr>
                         </thead>
                     </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowGear('gearTable')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowGear('gearTable')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
+                    <table id="featsTable" class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Feats</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowFeats('featsTable')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowFeats('featsTable')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
+                    <table id="specialAbilitiesTable" class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Special Abilities</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowSpecialAbilities('specialAbilitiesTable')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowSpecialAbilities('specialAbilitiesTable')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
+                    <table id="weaponsTable" class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Weapons</th>
+                                <th scope="col">Attack Bonus</th>
+                                <th scope="col">Critical</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Range</th>
+                                <th scope="col">Ammunition</th>
+                                <th scope="col">Damage</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowWeapons('weaponsTable')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowWeapons('weaponsTable')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
+                    <table id="ACItemsTable" class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">AC Items</th>
+                                <th scope="col">Bonus</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Check Penalty</th>
+                                <th scope="col">Spell Failure</th>
+                                <th scope="col">Weight</th>
+                                <th scope="col">Proprerties</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowACItems('ACItemsTable')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowACItems('ACItemsTable')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
                     <div class="form-group row">
                         <label for="PlayerCP" class="col-sm-2 col-form-label">CP</label>
                         <div class="col-auto">
@@ -633,6 +706,16 @@
                         <label for="PlayerPP" class="col-sm-2 col-form-label">PP</label>
                         <div class="col-auto">
                             <input type="number" min="0" max="999999999999999" class="form-control" id="PlayerPP" placeholder="PP" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="PLayerExp" class="col-sm-2 col-form-label">Experience Points</label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="999999999999999" class="form-control" id="PlayerEXP" placeholder="EXP" />
+                        </div>
+                        <label for="PlayerExpNextLevel" class="col-sm-2 col-form-label">Next Level</label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="999999999999999" class="form-control" id="PlayerEXPNextLevel" placeholder="Next Level" />
                         </div>
                     </div>
                 </div>
@@ -745,6 +828,116 @@
                             <input type="text" class="form-control" id="DomainSpecialty" placeholder="Domain/Specialty" />
                         </div>
                     </div>
+                    <table class="table" id="ZeroLevelsKnown">
+                        <thead>
+                            <tr>
+                                <th>Zero Levels</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowZeroLevels('ZeroLevelsKnown')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowZeroLevels('ZeroLevelsKnown')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
+                    <table class="table" id="FirstLevelsKnown">
+                        <thead>
+                            <tr>
+                                <th>First Levels</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowFirstLevels('FirstLevelsKnown')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowFirstLevels('FirstLevelsKnown')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
+                    <table class="table" id="SecondLevelsKnown">
+                        <thead>
+                            <tr>
+                                <th>Second Levels</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowSecondLevels('SecondLevelsKnown')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowSecondLevels('SecondLevelsKnown')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
+                    <table class="table" id="ThirdLevelsKnown">
+                        <thead>
+                            <tr>
+                                <th>Third Levels</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowThirdLevels('ThirdLevelsKnown')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowThirdLevels('ThirdLevelsKnown')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
+                    <table class="table" id="FourthLevelsKnown">
+                        <thead>
+                            <tr>
+                                <th>Fourth Levels</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowFourthLevels('FourthLevelsKnown')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowFourthLevels('FourthLevelsKnown')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
+                    <table class="table" id="FifthLevelsKnown">
+                        <thead>
+                            <tr>
+                                <th>Fifth Levels</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowFifthLevels('FifthLevelsKnown')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowFifthLevels('FifthLevelsKnown')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
+                    <table class="table" id="SixthLevelsKnown">
+                        <thead>
+                            <tr>
+                                <th>Sixth Levels</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowSixthLevels('SixthLevelsKnown')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowSixthLevels('SixthLevelsKnown')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
+                    <table class="table" id="SeventhLevelsKnown">
+                        <thead>
+                            <tr>
+                                <th>Seventh Levels</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowSeventhLevels('SeventhLevelsKnown')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowSeventhLevels('SeventhLevelsKnown')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
+                    <table class="table" id="EighthLevelsKnown">
+                        <thead>
+                            <tr>
+                                <th>Eighth Levels</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowEighthLevels('EighthLevelsKnown')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowEighthLevels('EighthLevelsKnown')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
+                    <table class="table" id="NinthLevelsKnown">
+                        <thead>
+                            <tr>
+                                <th>Ninth Levels</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowNinthLevels('NinthLevelsKnown')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowNinthLevels('NinthLevelsKnown')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
                 </div>
 
             </div>
@@ -799,8 +992,271 @@
             }, false);
         })();
 
-    function myDeleteFunction() {
-        document.getElementById("myTable").deleteRow(0);
+    function addRowGear() {
+        if (document.getElementById("gearTable").rows.length > 26) {
+            return;
+        }
+        var table = document.getElementById("gearTable");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = '<input type="text" class="form-control" id="Gear" placeholder="Gear" />';
+        cell2.innerHTML = '<input type="number" min="0" max="999999" class="form-control inTableWidth" id="Weight" />';
+    }
+    function deleteRowGear() {
+        if (document.getElementById("gearTable").rows.length < 2) {
+            return;
+        }
+        document.getElementById("gearTable").deleteRow(1);
+    }
+
+    function addRowFeats() {
+        if (document.getElementById("featsTable").rows.length > 26) {
+            return;
+        }
+        var table = document.getElementById("featsTable");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = '<input type="text" class="form-control" id="Feat" placeholder="Feat" />';
+    }
+    function deleteRowFeats() {
+        if (document.getElementById("featsTable").rows.length < 2) {
+            return;
+        }
+        document.getElementById("featsTable").deleteRow(1);
+    }
+
+    function addRowSpecialAbilities() {
+        if (document.getElementById("specialAbilitiesTable").rows.length > 20) {
+            return;
+        }
+        var table = document.getElementById("specialAbilitiesTable");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = '<input type="text" class="form-control" id="SpecialAbility" placeholder="Special Ability" />';
+    }
+    function deleteRowSpecialAbilities() {
+        if (document.getElementById("specialAbilitiesTable").rows.length < 2) {
+            return;
+        }
+        document.getElementById("specialAbilitiesTable").deleteRow(1);
+    }
+
+    function addRowWeapons() {
+        if (document.getElementById("weaponsTable").rows.length > 5) {
+            return;
+        }
+        var table = document.getElementById("weaponsTable");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        cell1.innerHTML = '<input type="text" class="form-control" id="Weapons" placeholder="Weapon" />';
+        cell2.innerHTML = '<input type="text" class="form-control" id="AttackBonus" placeholder="Bonus" />';;
+        cell3.innerHTML = '<input type="text" class="form-control" id="Critical" placeholder="Crit" />';
+        cell4.innerHTML = '<input type="text" class="form-control" id="Type" placeholder="Type" />';
+        cell5.innerHTML = '<input type="text" class="form-control" id="Range" placeholder="Range" />';
+        cell6.innerHTML = '<input type="text" class="form-control" id="Ammunition" placeholder="Ammunition" />';
+        cell7.innerHTML = '<input type="text" class="form-control" id="Damage" placeholder="Damage" />';
+    }
+    function deleteRowWeapons() {
+        if (document.getElementById("weaponsTable").rows.length < 2) {
+            return;
+        }
+        document.getElementById("weaponsTable").deleteRow(1);
+    }
+
+    function addRowACItems() {
+        if (document.getElementById("ACItemsTable").rows.length > 5) {
+            return;
+        }
+        var table = document.getElementById("ACItemsTable");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        cell1.innerHTML = '<input type="text" class="form-control" id="ACItems" placeholder="AC Item" />';
+        cell2.innerHTML = '<input type="number" min="0" max="100" class="form-control inTableWidth" id="Bonus" />';
+        cell3.innerHTML = '<select class="form-control" id="ArmorType"> < option disabled selected hidden > Choose...</option > <option>Light</option> <option>Medium</option> <option>Heavy</option></select >';
+        cell4.innerHTML = '<input type="number" min="-100" max="100" class="form-control inTableWidth" id="CheckPenalty" />';
+        cell5.innerHTML = '<input type="number" min="0" max="100" class="form-control inTableWidth" id="SpellFailure" />';
+        cell6.innerHTML = '<input type="number" min="0" max="999999" class="form-control inTableWidth" id="Weight" />';
+        cell7.innerHTML = '<input type="text" class="form-control" id="Properties" placeholder="Property" />';
+
+    }
+    function deleteRowACItems() {
+        if (document.getElementById("ACItemsTable").rows.length < 2) {
+            return;
+        }
+        document.getElementById("ACItemsTable").deleteRow(1);
+    }
+
+    function addRowZeroLevels() {
+        if (document.getElementById("ZeroLevelsKnown").rows.length > 8) {
+            return;
+        }
+        var table = document.getElementById("ZeroLevelsKnown");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = '<input type="text" class="form-control" id="ZeroLevel" placeholder="Zero Level" />';
+    }
+    function deleteRowZeroLevels() {
+        if (document.getElementById("ZeroLevelsKnown").rows.length < 2) {
+            return;
+        }
+        document.getElementById("ZeroLevelsKnown").deleteRow(1);
+    }
+
+    function addRowFirstLevels() {
+        if (document.getElementById("FirstLevelsKnown").rows.length > 8) {
+            return;
+        }
+        var table = document.getElementById("FirstLevelsKnown");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = '<input type="text" class="form-control" id="FirstLevel" placeholder="First Level" />';
+    }
+    function deleteRowFirstLevels() {
+        if (document.getElementById("FirstLevelsKnown").rows.length < 2) {
+            return;
+        }
+        document.getElementById("FirstLevelsKnown").deleteRow(1);
+    }
+
+    function addRowSecondLevels() {
+        if (document.getElementById("SecondLevelsKnown").rows.length > 7) {
+            return;
+        }
+        var table = document.getElementById("SecondLevelsKnown");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = '<input type="text" class="form-control" id="SecondLevel" placeholder="Second Level" />';
+    }
+    function deleteRowSecondLevels() {
+        if (document.getElementById("SecondLevelsKnown").rows.length < 2) {
+            return;
+        }
+        document.getElementById("SecondLevelsKnown").deleteRow(1);
+    }
+
+    function addRowThirdLevels() {
+        if (document.getElementById("ThirdLevelsKnown").rows.length > 6) {
+            return;
+        }
+        var table = document.getElementById("ThirdLevelsKnown");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = '<input type="text" class="form-control" id="ThirdLevel" placeholder="Third Level" />';
+    }
+    function deleteRowThirdLevels() {
+        if (document.getElementById("ThirdLevelsKnown").rows.length < 2) {
+            return;
+        }
+        document.getElementById("ThirdLevelsKnown").deleteRow(1);
+    }
+
+    function addRowFourthLevels() {
+        if (document.getElementById("FourthLevelsKnown").rows.length > 5) {
+            return;
+        }
+        var table = document.getElementById("FourthLevelsKnown");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = '<input type="text" class="form-control" id="FourthLevel" placeholder="Fourth Level" />';
+    }
+    function deleteRowFourthLevels() {
+        if (document.getElementById("FourthLevelsKnown").rows.length < 2) {
+            return;
+        }
+        document.getElementById("FourthLevelsKnown").deleteRow(1);
+    }
+
+    function addRowFifthLevels() {
+        if (document.getElementById("FifthLevelsKnown").rows.length > 4) {
+            return;
+        }
+        var table = document.getElementById("FifthLevelsKnown");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = '<input type="text" class="form-control" id="FifthLevel" placeholder="Fifth Level" />';
+    }
+    function deleteRowFifthLevels() {
+        if (document.getElementById("FifthLevelsKnown").rows.length < 2) {
+            return;
+        }
+        document.getElementById("FifthLevelsKnown").deleteRow(1);
+    }
+
+    function addRowSixthLevels() {
+        if (document.getElementById("SixthLevelsKnown").rows.length > 4) {
+            return;
+        }
+        var table = document.getElementById("SixthLevelsKnown");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = '<input type="text" class="form-control" id="SixthLevel" placeholder="Sixth Level" />';
+    }
+    function deleteRowSixthLevels() {
+        if (document.getElementById("SixthLevelsKnown").rows.length < 2) {
+            return;
+        }
+        document.getElementById("SixthLevelsKnown").deleteRow(1);
+    }
+
+    function addRowSeventhLevels() {
+        if (document.getElementById("SeventhLevelsKnown").rows.length > 4) {
+            return;
+        }
+        var table = document.getElementById("SeventhLevelsKnown");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = '<input type="text" class="form-control" id="SeventhLevel" placeholder="Seventh Level" />';
+    }
+    function deleteRowSeventhLevels() {
+        if (document.getElementById("SeventhLevelsKnown").rows.length < 2) {
+            return;
+        }
+        document.getElementById("SeventhLevelsKnown").deleteRow(1);
+    }
+
+    function addRowEighthLevels() {
+        if (document.getElementById("EighthLevelsKnown").rows.length > 3) {
+            return;
+        }
+        var table = document.getElementById("EighthLevelsKnown");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = '<input type="text" class="form-control" id="EighthLevel" placeholder="Eighth Level" />';
+    }
+    function deleteRowEighthLevels() {
+        if (document.getElementById("EighthLevelsKnown").rows.length < 2) {
+            return;
+        }
+        document.getElementById("EighthLevelsKnown").deleteRow(1);
+    }
+
+    function addRowNinthLevels() {
+        if (document.getElementById("NinthLevelsKnown").rows.length > 2) {
+            return;
+        }
+        var table = document.getElementById("NinthLevelsKnown");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = '<input type="text" class="form-control" id="NinthLevel" placeholder="Ninth Level" />';
+    }
+    function deleteRowNinthLevels() {
+        if (document.getElementById("NinthLevelsKnown").rows.length < 2) {
+            return;
+        }
+        document.getElementById("NinthLevelsKnown").deleteRow(1);
     }
 </script>
 
@@ -815,6 +1271,10 @@
 
     #Gender {
         width: 150px;
+    }
+
+    #SpellResistance {
+        width: 100px;
     }
 
     #FlyManuverability {
@@ -832,5 +1292,9 @@
     .btnStyle {
         background-color: #61ccba;
         color: white;
+    }
+
+    .btnList{
+        border-color: white;
     }
 </style>

@@ -104,6 +104,26 @@ namespace PFCharacterSheetEditor.Models
         public int PlayerSP { get; set; }
         public int PlayerGP { get; set; }
         public int PlayerPP { get; set; }
-
+        public string ConditionalModifiers { get; set; }
+        public string Languages { get; set; }
+//Weapons
+//ACItems
+//Gear
+//Feats
+//SpecialAbilities
+        public int PlayerExp { get; set; }
+        public int PlayerExpNextLevel { get; set; }
+//SpellsKnown
+//SpellsPerDay
+//SpellsKnownZeroLevel
+//SpellsKnownFirstLevel
+//SpellsKnownSecondLevel
+//SpellsKnownThirdLevel
+//SpellsKnownFourthLevel
+//SpellsKnownFifthLevel
+//SpellsKnownSixthLevel
+//SpellsKnownSeventhLevel
+//SpellsKnownEighthLevel
+//SpellsKnownNinthLevel
     }
 }
