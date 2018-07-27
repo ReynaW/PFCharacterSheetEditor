@@ -16,7 +16,6 @@
     <div class="row form-horizontal">
         <div id="questionTabs" class="col-md-12">
             <div class="tab-content">
-                <!--TODO: Add Character Classes and DR field, add spells, gear, feats, special abilities, armor, weapons.-->
 
                 <div id="t1" class="active tab-pane">
                     <div class="form-group row">
@@ -24,12 +23,19 @@
                         <div class="col-auto">
                             <input type="text" class="form-control" id="CharacterName" placeholder="Character name" required />
                         </div>
-                        <label for="CharacterLevel" class="col-sm-2 col-form-label">Character Level<font color="danger">*</font></label>
-                        <div class="col-auto">
-                            <input type="text" class="form-control" id="CharacterLevel" placeholder="Character level" required />
-                        </div>
                     </div>
-                    <p> Character Class(es): Work in progress</p>
+                    <table class="table" id="characterClassTable">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="row">
+                        <input type="button" id="moreRows" onclick="addRowCharacterClass('characterClassTable')" value="Add More" class="btn btn-info btnList" />
+                        <input type="button" id="lessRows" onclick="deleteRowCharacterClass('characterClassTable')" value="Delete Row" class="btn btn-info btnList" />
+                    </div>
                     <div class="form-group row">
                         <label for="Alignment" class="col-sm-2 col-form-label">Alignment<font color="danger">*</font></label>
                         <select class="form-control" id="Alignment" required>
@@ -204,11 +210,18 @@
                             <input type="number" min="0" max="20" class="form-control" id="MiscACBonus" placeholder="Misc. bonus to AC" />
                         </div>
                     </div>
-                    <p> Damage Resistance: Work in Progress</p>
                     <div class="form-group row">
-                        <label for="SpellResistance" class="col-sm-2 col-form-label">Spell Resistance</label>
-                        <div class="col-sm-10">
-                            <input type="number" min="0" max="20" class="form-control" id="SpellResistance" placeholder="SR" />
+                        <label for="DamageResistance" class="col-sm-2 col-form-label">Damage Resistance</label>
+                        <div class="col-auto">
+                            <input type="number" min="0" max="100" class="form-control" id="DamageResistance" placeholder="DR" />
+                        </div>
+                        <div class="input-group-append">
+                            <div class="input-group-text">/</div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-auto">
+                                <input type="text" class="form-control" id="DamageResistanceType" placeholder="DR Type" required />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1008,6 +1021,24 @@
             return;
         }
         document.getElementById("gearTable").deleteRow(1);
+    }
+
+    function addRowCharacterClass() {
+        if (document.getElementById("characterClassTable").rows.length > 30) {
+            return;
+        }
+        var table = document.getElementById("characterClassTable");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = '<input type="text" class="form-control" id="CharacterClass" placeholder="Class" />';
+        cell2.innerHTML = '<input type="number" min="0" max="100" class="form-control inTableWidth" id="Level" />';
+    }
+    function deleteRowCharacterClass() {
+        if (document.getElementById("characterClassTable").rows.length < 2) {
+            return;
+        }
+        document.getElementById("characterClassTable").deleteRow(1);
     }
 
     function addRowFeats() {
